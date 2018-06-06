@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.Instant;
 
 @Entity
 @Data
@@ -13,5 +14,5 @@ public class Video {
   private String cameraId;
   private String originalLocation;
   private String playbackUrl;
-  private java.sql.Timestamp startTime;
+  private Instant startTime;
 }

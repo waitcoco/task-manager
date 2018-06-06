@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.Instant;
 
 @Entity
 @Data
@@ -11,8 +12,8 @@ public class Task {
   @Id
   private String id;
   private String videoId;
-  private java.sql.Timestamp createTime;
+  private Instant createTime;
   private long status;
   private String executorId;
-  private java.sql.Timestamp executorHeartbeat;
+  private Instant executorHeartbeat;
 }
