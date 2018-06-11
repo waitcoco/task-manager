@@ -18,7 +18,8 @@ public interface TaskRepository extends CrudRepository<Task, String> {
     @Query(value = "select * from task where status = 0 or (status = 1 and executor_heartbeat < '2018-06-09') limit 1", nativeQuery = true)
     Task findAvailableTask();
 
-    Task findbyId(String id);
+    @Query(value = "select * from task where id = :taskId", nativeQuery = true)
+    Task findbyId(String taskId);
 //    @Modifying
 //    @Transactional
 //    @Query(value = "UPDATE task set status = 1 WHERE id = :taskId",nativeQuery = true)
