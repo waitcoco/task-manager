@@ -27,23 +27,15 @@ public class TaskController extends BaseController {
     @ResponseBody
     @PostMapping(path = "completeTask")
     public int completeTask(@RequestParam("taskId") String taskId, @RequestParam("executorId") String executorId) {
-        val task = taskRepository.findbyId(taskId);
-        if(task != null){
-            taskRepository.updateStatus(taskId, executorId);
-            return 202;
-        }
-        else return 400;
+        taskRepository.updateStatus(taskId, executorId);
+        return 202;
     }
 
     @ResponseBody
     @PostMapping(path = "udpateHeartbeat")
     public int updateHeartbeat(@RequestParam("taskId") String taskId, @RequestParam("executorId") String executorId) {
-        val task = taskRepository.findbyId(taskId);
-        if(task != null){
-            taskRepository.updateHeartbeat(taskId, executorId);
-            return 202;
-        }
-        else return 400;
+        taskRepository.updateHeartbeat(taskId, executorId);
+        return 202;
     }
 //    几个问题：
 //1. 获取task要保证原子性
