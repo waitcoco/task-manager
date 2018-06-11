@@ -11,7 +11,7 @@ import java.time.Instant;
 @Data
 public class Task {
   @Id
-  private String id;
+  private int id;
   private String videoId;
   private Instant createTime;
   private long status;
